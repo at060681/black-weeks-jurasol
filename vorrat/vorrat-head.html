@@ -1,0 +1,72 @@
+<!-- Vorratsanzeige (Black Weeks 2026), Quelle: vorrat.json im Repo black-weeks-jurasol. Entfernen = diesen Block löschen. -->
+<style>
+.jsl-v2{background:#fff;border-radius:8px;padding:12px 14px 14px;margin:14px 0 18px;display:grid;gap:10px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.jsl-v2 .k{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.jsl-v2 .l{display:flex;align-items:center;gap:9px;font-weight:800;font-size:15px;color:#1d1d1b}
+.jsl-v2 .l svg{width:22px;height:22px;flex:none}
+.jsl-v2 .r{font-size:12px;font-weight:700;color:#6b6a64}
+.jsl-v2 .bar{position:relative;height:10px;border-radius:99px;background:#eceae4;overflow:hidden}
+.jsl-v2 .bar b{position:absolute;inset:0 auto 0 0;width:var(--w);border-radius:99px;background:linear-gradient(90deg,var(--c1),var(--c2));overflow:hidden}
+.jsl-v2 .bar b:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:translateX(-100%);animation:jslsh 2.2s ease-in-out infinite}
+@keyframes jslsh{to{transform:translateX(100%)}}
+.jsl-v2[data-s=gut]{--c1:#22b35e;--c2:#5bd88a;--w:75%}.jsl-v2[data-s=knapp]{--c1:#ff9f1a;--c2:#ffc04d;--w:42%}.jsl-v2[data-s=wenig]{--c1:#ff3b30;--c2:#ff7a45;--w:18%}.jsl-v2[data-s=aus]{--c1:#bdbab2;--c2:#bdbab2;--w:0%}
+#jsl-bw .jsl-vr{display:grid;gap:8px;margin:6px 0 4px;max-width:420px}
+#jsl-bw .jsl-vr .k{display:flex;align-items:center;gap:9px;font-weight:800;font-size:17px;color:#fff}
+#jsl-bw .jsl-vr .p{width:11px;height:11px;border-radius:50%;background:var(--c)}
+#jsl-bw .jsl-vr .a{display:flex;align-items:center;gap:3px}
+#jsl-bw .jsl-vr .z{flex:1;display:grid;grid-template-columns:repeat(10,1fr);gap:3px;padding:3px;border-radius:6px;background:#1e1c17}
+#jsl-bw .jsl-vr .z i{height:13px;border-radius:2px;background:#3a3833}
+#jsl-bw .jsl-vr .z i.an{background:var(--c)}
+#jsl-bw .jsl-vr .pol{width:4px;height:11px;border-radius:0 2px 2px 0;background:#1e1c17}
+#jsl-bw .jsl-vr[data-s=gut]{--c:#2ecc71}#jsl-bw .jsl-vr[data-s=knapp]{--c:#ff9f1a}#jsl-bw .jsl-vr[data-s=wenig]{--c:#ff3b30}#jsl-bw .jsl-vr[data-s=aus]{--c:#3a3833}
+#jsl-bw .jsl-vr[data-s=wenig] .an,#jsl-bw .jsl-vr[data-s=wenig] .p{animation:jslp 1.4s ease-in-out infinite}
+@keyframes jslp{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.jsl-v2 .bar b:after,#jsl-bw .jsl-vr *{animation:none!important}}
+</style>
+<script>
+(function(){
+  var QUELLE="https://raw.githubusercontent.com/at060681/black-weeks-jurasol/main/vorrat.json";
+  var TEXT={gut:"Gut verfügbar",knapp:"Wird knapp",wenig:"Nur noch wenige da",aus:"Ausverkauft"};
+  var ZELLEN={gut:7,knapp:4,wenig:2,aus:0};
+  var FARBE={gut:["#22b35e",9],knapp:["#ff9f1a",6],wenig:["#ff3b30",3],aus:["#9a978f",0]};
+  var SLUG={"jackery-solarvault-3-pro":"930","marstek-venus-e-3-0-5120wh":"851","mova-lumegret-a4000-solarspeicher-4-kwh":"1150"};
+  var BW=new Date()<new Date("2026-12-01T00:00:00+01:00");
+
+  function karte(s){
+    var f=FARBE[s],d=document.createElement("div");
+    d.className="jsl-v2";d.dataset.s=s;d.setAttribute("role","img");d.setAttribute("aria-label","Vorrat: "+TEXT[s]);
+    d.innerHTML='<div class="k"><span class="l"><svg viewBox="0 0 24 24" fill="none" stroke="'+f[0]+'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="17" height="10" rx="2"/><path d="M22 11v2"/><rect x="4.5" y="9.5" width="'+f[1]+'" height="5" rx=".5" fill="'+f[0]+'" stroke="none"/></svg>'+TEXT[s]+'</span><span class="r">'+(BW?"Black-Weeks-Vorrat":"Vorrat")+'</span></div><div class="bar"><b></b></div>';
+    return d;
+  }
+  function akku(s){
+    var d=document.createElement("div"),z="";
+    for(var i=0;i<10;i++)z+='<i class="'+(i<ZELLEN[s]?"an":"")+'"></i>';
+    d.className="jsl-vr";d.dataset.s=s;d.setAttribute("role","img");d.setAttribute("aria-label","Vorrat: "+TEXT[s]);
+    d.innerHTML='<div class="k"><span class="p"></span>'+TEXT[s]+'</div><div class="a"><div class="z">'+z+'</div><div class="pol"></div></div>';
+    return d;
+  }
+  function idAusLink(h){
+    var m=/products_id=(\d+)/.exec(h);if(m)return m[1];
+    m=/\/([a-z0-9-]+)\.html/.exec(h);return m?SLUG[m[1]]:null;
+  }
+  function zeige(st){
+    // Produktseite: unter Preis und MwSt-Zeile, über Menge und Warenkorb
+    var pid=document.getElementById("products-id"),tx=document.querySelector(".price-container .tax-shipping-text"),cart=document.querySelector(".js-btn-add-to-cart");
+    if(pid&&tx&&cart&&st[pid.value]&&!document.querySelector(".jsl-v2")){
+      var t=tx;while(t.parentElement&&!t.parentElement.contains(cart))t=t.parentElement;
+      t.parentNode.insertBefore(karte(st[pid.value]),t.nextSibling);
+    }
+    // Landingpage Black Weeks: unter dem Preis jedes Angebots
+    document.querySelectorAll("#jsl-bw article.prod").forEach(function(a){
+      var b=a.querySelector("a.buy"),p=a.querySelector(".price"),id=b&&idAusLink(b.getAttribute("href"));
+      if(id&&st[id]&&p&&!a.querySelector(".jsl-vr"))p.insertAdjacentElement("afterend",akku(st[id]));
+    });
+  }
+  window.jslVorratZeige=zeige;
+  function los(){
+    if(!document.getElementById("products-id")&&!document.getElementById("jsl-bw"))return;
+    fetch(QUELLE,{cache:"no-cache"}).then(function(r){return r.ok?r.json():null}).then(function(j){if(j&&j.stufen)zeige(j.stufen)}).catch(function(){});
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",los);else los();
+})();
+</script>
