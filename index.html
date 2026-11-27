@@ -42,6 +42,18 @@ body:has(#jsl-bw){background:#050505}
 
 @media (max-width:900px){#jsl-bw .hero-grid,#jsl-bw .prod,#jsl-bw .visit-grid{grid-template-columns:1fr}#jsl-bw .prod:nth-of-type(even) .vis{order:0}#jsl-bw .stage-hero{height:min(70vw,420px)}#jsl-bw .why-grid{grid-template-columns:1fr;gap:50px}#jsl-bw .specs{grid-template-columns:1fr 1fr;row-gap:14px}#jsl-bw .spec:nth-child(2n)::after{display:none}#jsl-bw .day{padding:0 12px}#jsl-bw .day b{font-size:1.9em}#jsl-bw .day span{font-size:.72em}#jsl-bw .count h2{letter-spacing:.08em}#jsl-bw nav .bwk-btn span{display:none}#jsl-bw .hero{padding:96px 0 32px}#jsl-bw .hero .cta-row .bwk-btn{flex:1 1 0;justify-content:center;padding:1em .8em}#jsl-bw .dates{margin-top:32px;display:grid;grid-template-columns:repeat(3,auto);justify-content:start}#jsl-bw .day{padding:0 10px}#jsl-bw .day b{font-size:1.75em}#jsl-bw .day em{font-size:.66em;letter-spacing:.03em;white-space:nowrap}#jsl-bw .hero .cta-row .bwk-btn{white-space:nowrap;font-size:.95em}#jsl-bw .count{padding:72px 0 8px}#jsl-bw .sec-head{padding:48px 0 0}#jsl-bw .prod{padding:48px 0;gap:20px}#jsl-bw .vis{aspect-ratio:1/0.82}#jsl-bw .why{padding:64px 0 40px}#jsl-bw .why-grid{margin-top:36px;gap:40px}#jsl-bw .why-item svg{width:60px;height:60px}#jsl-bw .why-item h3{margin:14px 0 8px}#jsl-bw .visit{padding:64px 0}#jsl-bw .visit-grid{gap:24px}#jsl-bw .visit .cta-row .bwk-btn{flex:1 1 100%;justify-content:center}#jsl-bw .pin{max-width:240px}#jsl-bw .final{padding:72px 0 56px}#jsl-bw .bw-foot{padding:24px 0 32px}
 }
+#jsl-bw .deals{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px;padding:30px 0 40px}
+#jsl-bw .deal{background:#111;border:1px solid #2a2a2a;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+#jsl-bw .deal img{width:100%;aspect-ratio:1;object-fit:cover}
+#jsl-bw .d-txt{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+#jsl-bw .deal h3{font-weight:800;font-size:1.1em;line-height:1.25}
+#jsl-bw .deal p{color:var(--mute);font-weight:600;font-size:.95em;line-height:1.4}
+#jsl-bw .d-preis{display:flex;align-items:baseline;gap:10px;margin-top:auto;flex-wrap:wrap}
+#jsl-bw .d-preis strong{font-weight:900;font-style:italic;font-size:2em;color:var(--sun)}
+#jsl-bw .d-preis span{color:var(--mute);font-weight:700}#jsl-bw .d-preis s{color:#fff;text-decoration-color:var(--hot);text-decoration-thickness:2px}
+#jsl-bw .d-spar{align-self:flex-start;background:var(--sun);color:#111;font-weight:900;font-style:italic;padding:.2em .6em;font-size:.9em}
+#jsl-bw .deal p.d-mwst{font-size:.8em}
+#jsl-bw .deal .bwk-btn{justify-content:center;margin-top:6px}
 @media (prefers-reduced-motion:reduce){#jsl-bw,#jsl-bw *{animation:none!important;transition:none!important}#jsl-bw .reveal{opacity:1;translate:0 0}}
 
 .page-shop-content #outer-wrapper{overflow-x:clip}
@@ -100,7 +112,7 @@ body:has(#jsl-bw){background:#050505}
     <div>
       <div class="kicker"><span>Online und im Showroom Hilpoltstein</span></div>
       <h1><span class="l1">Black</span><span class="l2">Weeks</span></h1>
-      <p class="lead">Sechs Speicher-Angebote vom 13. bis 30. November. <b>Online bestellen</b> oder im Showroom anschauen und gleich mitnehmen.</p>
+      <p class="lead"><b>Das Finale:</b> 15 Deals ab 299 €, nur noch bis Montag, 30. November, 23:59 Uhr. Online bestellen oder im Showroom mitnehmen.</p>
       <div class="dates">
         <div class="day"><span>Start</span><b>13.11.</b><em>Freitag</em></div>
         <div class="day"><span>Ende</span><b>30.11.</b><em>Cyber Monday</em></div>
@@ -119,7 +131,7 @@ body:has(#jsl-bw){background:#050505}
         <path d="M200 30a170 170 0 0 1 147 85" stroke-width="3"/>
         <path d="M53 285a170 170 0 0 1-23-85" stroke-width="3"/>
       </svg>
-      <div class="price-burst"><small>ab</small><strong>499 €</strong></div>
+      <div class="price-burst"><small>ab</small><strong>299 €</strong></div>
       <img class="unit" src="img/sv3pro.webp" alt="Jackery SolarVault 3 Pro">
       <img class="meter" src="img/meter.webp" alt="Jackery Smart Meter">
     </div>
@@ -143,9 +155,51 @@ body:has(#jsl-bw){background:#050505}
 
 <div id="angebote" class="wrap">
   <div class="sec-head reveal">
-    <h2>Sechs Angebote.<br><span>Bis 30. November.</span></h2>
+    <h2>15 Deals.<br><span>Nur noch bis Montag.</span></h2>
     <p>Online bestellen und liefern lassen oder im Showroom Hilpoltstein anschauen und gleich mitnehmen. <b style="color:#fff">Nur solange der Vorrat reicht.</b></p>
   </div>
+
+  <!-- Black Friday Knaller 950 (blendet sich am 28.11. 00:00 aus) -->
+  <article class="prod" id="jackery-950" data-bis="2026-11-28T00:00:00+01:00">
+    <div class="vis reveal" style="aspect-ratio:1/1">
+      <img src="img/bf950.webp" alt="Black Friday Knaller: Jackery Balkonkraftwerk mit Speicher, 1.399 Euro, gratis Montageset" style="position:static;width:100%;border-radius:12px;-webkit-box-reflect:none">
+    </div>
+    <div class="txt reveal">
+      <div class="brands"><img src="img/logo_jackery.webp" alt="Jackery"></div>
+      <h3>Balkonkraftwerk 2.000 W + 5,04 kWh</h3>
+      <p class="sub">Nur heute: Montageset nach Wahl gratis dazu</p>
+      <div class="price">
+        <div><span class="tag"><span>Knaller-Preis</span></span><strong>1.399 €</strong></div>
+      </div>
+      <ul class="incl"><li>4 Module</li><li>SolarVault 3 Pro + Zusatzspeicher</li><li>Smart Meter + Base</li><li>8 × 5 m Solarkabel</li><li>Montageset gratis</li></ul>
+      <a class="bwk-btn bwk-sun buy" href="https://www.jurasol24.de/jackery-solarvault-3-pro-2000-Watt-Set-inkl--5-kWh-Batterie.html?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=black-weeks-finale-2026">Knaller sichern <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </article>
+
+  <!-- NEU: Anker Solarbank 4 Pro -->
+  <article class="prod" id="anker-sb4pro">
+    <div class="vis reveal">
+      <div class="rays"></div><div class="glow"></div><div class="floor"></div>
+      <svg class="neon" viewBox="0 0 400 320"><path d="M40 160 200 40l160 120"/><path d="M80 130v170h240V130"/><path d="M118 200h40l-24 40h40"/><path d="M262 190l18-30 18 30m-30-12h24"/></svg>
+      <img class="shadow" src="img/sb4pro.webp" alt="Anker SOLIX Solarbank 4 E5000 Pro" style="width:80%;left:50%;translate:-50% 0;bottom:16%">
+    </div>
+    <div class="txt reveal">
+      <div class="brands"><span style="font-weight:900;letter-spacing:.18em;font-size:1.3em">ANKER SOLIX</span></div>
+      <h3>Solarbank 4 E5000 Pro</h3>
+      <p class="sub">Neu: Notstrom bis 2.500 W, lädt auch aus dem Netz</p>
+      <div class="price">
+        <div><span class="tag"><span>Black-Week-Preis</span></span><strong>1.299 €</strong></div>
+        <div class="was">statt <s>1.499 €</s><span class="save">Du sparst 200 €</span></div>
+      </div>
+      <div class="specs">
+        <div class="spec"><svg><use href="#i-bat"/></svg><div><b>5 kWh</b><span>Speicher</span></div></div>
+        <div class="spec"><svg><use href="#i-stack"/></svg><div><b>Erweiterbar</b><span>bis 30 kWh</span></div></div>
+        <div class="spec"><svg><use href="#i-bolt"/></svg><div><b>5.000 W</b><span>PV-Eingang, 4 MPPT</span></div></div>
+        <div class="spec"><svg><use href="#i-shield"/></svg><div><b>10 Jahre</b><span>Garantie</span></div></div>
+      </div>
+      <a class="bwk-btn bwk-sun buy" href="https://www.jurasol24.de/anker-solix-solarbank-4-e5000-pro.html?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=black-weeks-finale-2026">Jetzt kaufen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </article>
 
   <!-- 1 SV3 Pro -->
   <article class="prod" id="sv3pro">
@@ -276,7 +330,7 @@ body:has(#jsl-bw){background:#050505}
       <h3>Venus E 3.0</h3>
       <p class="sub">AC-Speicher mit 5,12 kWh, Plug &amp; Play</p>
       <div class="price">
-        <div><span class="tag"><span>Black-Week-Preis</span></span><strong>809 €</strong></div>
+        <div><span class="tag"><span>Black-Week-Preis</span></span><strong>879 €</strong></div>
         <div class="was">statt <s>999 €</s></div>
       </div>
       <ul class="incl"><li>Plug &amp; Play</li><li>Notstrom bis 2,5 kW</li></ul>
@@ -314,6 +368,18 @@ body:has(#jsl-bw){background:#050505}
       <a class="bwk-btn bwk-sun buy" href="https://www.jurasol24.de/mova-lumegret-a4000-solarspeicher-4-kwh.html?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=black-weeks-2026">Jetzt kaufen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </article>
+
+  <!-- Noch mehr Deals (27.11.2026) -->
+  <div class="sec-head reveal" id="mehr-deals"><h2>Noch mehr Deals.<br><span>Bis zu 330 € gespart.</span></h2></div>
+  <div class="deals">
+    <article class="deal reveal" id="b2500"><img src="img/nl/2026-11-27/d853.jpg" alt="Marstek Saturn B2500-D" loading="lazy"><div class="d-txt"><h3>Marstek Saturn B2500-D</h3><p>Günstigster Einstieg: 2,24 kWh Speicher</p><div class="d-preis"><strong>299 €</strong><span>statt <s>369 €</s></span></div><span class="d-spar">Du sparst 70 €</span><p class="d-mwst">inkl. 0 % MwSt.</p><a class="bwk-btn bwk-sun buy" href="https://www.jurasol24.de/marstek-saturn-B2500.html?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=black-weeks-finale-2026">Deal sichern <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></article>
+    <article class="deal reveal" id="sb3pro"><img src="img/nl/2026-11-27/d909.jpg" alt="Anker SOLIX Solarbank 3 E2700 Pro" loading="lazy"><div class="d-txt"><h3>Anker SOLIX Solarbank 3 E2700 Pro</h3><p>2,7 kWh Speicher für dein Balkonkraftwerk</p><div class="d-preis"><strong>799 €</strong><span>statt <s>899 €</s></span></div><span class="d-spar">Du sparst 100 €</span><p class="d-mwst">inkl. 0 % MwSt.</p><a class="bwk-btn bwk-sun buy" href="https://www.jurasol24.de/ankersolarbank3pro.html?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=black-weeks-finale-2026">Deal sichern <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></article>
+    <article class="deal reveal" id="maxac"><img src="img/nl/2026-11-27/d976.jpg" alt="Anker SOLIX Solarbank Max AC" loading="lazy"><div class="d-txt"><h3>Anker SOLIX Solarbank Max AC</h3><p>Großer 7-kWh-Speicher für den ganzen Abend</p><div class="d-preis"><strong>1.449 €</strong><span>statt <s>1.699 €</s></span></div><span class="d-spar">Du sparst 250 €</span><p class="d-mwst">inkl. 0 % MwSt.</p><a class="bwk-btn bwk-sun buy" href="https://www.jurasol24.de/anker-solix-solarbank-max-ac.html?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=black-weeks-finale-2026">Deal sichern <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></article>
+    <article class="deal reveal" id="zendure"><img src="img/nl/2026-11-27/d947.jpg" alt="Zendure SolarFlow 4000 Mix Pro" loading="lazy"><div class="d-txt"><h3>Zendure SolarFlow 4000 Mix Pro</h3><p>8 kWh Akku, bringt dich durch die Nacht</p><div class="d-preis"><strong>1.869 €</strong><span>statt <s>2.199 €</s></span></div><span class="d-spar">Du sparst 330 €</span><p class="d-mwst">inkl. 0 % MwSt.</p><a class="bwk-btn bwk-sun buy" href="https://www.jurasol24.de/zendure-solarflow-4000-mix-pro-8-kwh.html?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=black-weeks-finale-2026">Deal sichern <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></article>
+    <article class="deal reveal" id="storage-mini"><img src="img/nl/2026-11-27/d868.jpg" alt="JurSol Storage Mini 2.000 W + 2,7 kWh" loading="lazy"><div class="d-txt"><h3>JurSol Storage Mini 2.000 W + 2,7 kWh</h3><p>Versandkostenfrei mit Code FREIMAX</p><div class="d-preis"><strong>1.249 €</strong><span>statt <s>1.559 €</s></span></div><span class="d-spar">Du sparst 310 €</span><p class="d-mwst">inkl. 0 % MwSt.</p><a class="bwk-btn bwk-sun buy" href="https://www.jurasol24.de/Jursolstorageminianker-2000-3200-861-868.html?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=black-weeks-finale-2026">Deal sichern <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></article>
+    <article class="deal reveal" id="sb4-set-2000"><img src="img/nl/2026-11-27/d936.jpg" alt="Solarbank 4 Pro Set 2.000 W / 5 kWh" loading="lazy"><div class="d-txt"><h3>Solarbank 4 Pro Set 2.000 W / 5 kWh</h3><p>4 Module und die neue Solarbank 4 Pro, komplett</p><div class="d-preis"><strong>1.849 €</strong><span>statt <s>1.999 €</s></span></div><span class="d-spar">Du sparst 150 €</span><p class="d-mwst">inkl. 0 % MwSt.</p><a class="bwk-btn bwk-sun buy" href="https://www.jurasol24.de/anker-solix-solarbank-4-e5000-pro-936.html?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=black-weeks-finale-2026">Deal sichern <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></article>
+    <article class="deal reveal" id="sb4-set-5000"><img src="img/nl/2026-11-27/d973.jpg" alt="Solarbank 4 Pro Set 5.000 W / 10 kWh" loading="lazy"><div class="d-txt"><h3>Solarbank 4 Pro Set 5.000 W / 10 kWh</h3><p>10 Module, Solarbank 4 Pro und Zusatzakku</p><div class="d-preis"><strong>3.599 €</strong><span>statt <s>3.699 €</s></span></div><span class="d-spar">Du sparst 100 €</span><p class="d-mwst">inkl. 0 % MwSt.</p><a class="bwk-btn bwk-sun buy" href="https://www.jurasol24.de/anker-solix-solarbank-4-e5000-pro-set-5000w-10kwh.html?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=black-weeks-finale-2026">Deal sichern <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></article>
+  </div>
 </div>
 
 <!-- WHY -->
@@ -384,7 +450,7 @@ body:has(#jsl-bw){background:#050505}
 <div class="bw-foot">
   <div class="wrap">
     <img src="img/jurasol_weiss.webp" alt="Jurasol Solartechnik">
-    <p>Angebote gelten vom 13.11. bis 30.11.2026 im Onlineshop und im Showroom Hilpoltstein, solange der Vorrat reicht.<br>Preise inkl. 0 % MwSt. nach § 12 Abs. 3 UStG, bei Lieferung zzgl. Versand.</p>
+    <p>Angebote gelten bis 30.11.2026, 23:59 Uhr, im Onlineshop und im Showroom Hilpoltstein, solange der Vorrat reicht. Black-Friday-Knaller nur am 27.11.2026.<br>Preise inkl. 0 % MwSt. nach § 12 Abs. 3 UStG, bei Lieferung zzgl. Versand.</p>
   </div>
 </div>
 
@@ -404,6 +470,7 @@ function tick(){
   document.getElementById('cd-s').textContent=pad(s%60);
 }
 tick();setInterval(tick,1000);
+document.querySelectorAll("[data-bis]").forEach(e=>{if(Date.now()>=new Date(e.dataset.bis).getTime())e.remove()});
 
 // Einblenden beim Scrollen
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
